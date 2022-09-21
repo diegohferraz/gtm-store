@@ -3,6 +3,25 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const handleAddToWishlist = (evt, prodId) => {
+    evt.stopPropagation()
+
+    const evtObj = {
+      eventType: 'added_to_wishlist',
+      eventValue: prodId,
+      sessionID: '87917321739721312873',
+      itemID: prodId,
+      userID: 'jhonny-cash',
+      placementId: 'HOME|COLLECTION',
+      recommendationID: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6',
+    }
+
+    window.dataLayer.push({
+      'event': 'c1-addToWishlist',
+      'evtData': JSON.stringify(evtObj)
+    })
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,16 +37,56 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <ul className={styles.productList}>
-          <Link href='/product/1'><li>Product 1</li></Link>
-          <Link href='/product/1'><li>Product 2</li></Link>
-          <Link href='/product/1'><li>Product 3</li></Link>
-          <Link href='/product/1'><li>Product 4</li></Link>
+          <Link href='/product/1'>
+            <li>
+              <span>Product 1</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 1)}>Add to wishlist</button>
+            </li>
+          </Link>
+          <Link href='/product/2'>
+            <li>
+              <span>Product 2</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 2)}>Add to wishlist</button>
+            </li>
+          </Link>
+          <Link href='/product/3'>
+            <li>
+              <span>Product 3</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 3)}>Add to wishlist</button>
+            </li>
+          </Link>
+          <Link href='/product/4'>
+            <li>
+              <span>Product 4</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 4)}>Add to wishlist</button>
+            </li>
+          </Link>
         </ul>
         <ul className={styles.productList}>
-          <Link href='/product/1'><li>Product 5</li></Link>
-          <Link href='/product/1'><li>Product 6</li></Link>
-          <Link href='/product/1'><li>Product 7</li></Link>
-          <Link href='/product/1'><li>Product 8</li></Link>
+          <Link href='/product/5'>
+            <li>
+              <span>Product 5</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 5)}>Add to wishlist</button>
+            </li>
+          </Link>
+          <Link href='/product/6'>
+            <li>
+              <span>Product 6</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 6)}>Add to wishlist</button>
+            </li>
+          </Link>
+          <Link href='/product/7'>
+            <li>
+              <span>Product 7</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 7)}>Add to wishlist</button>
+            </li>
+          </Link>
+          <Link href='/product/8'>
+            <li>
+              <span>Product 8</span>
+              <button onClick={(evt) => handleAddToWishlist(evt, 8)}>Add to wishlist</button>
+            </li>
+          </Link>
         </ul>
       </main>
     </div>
