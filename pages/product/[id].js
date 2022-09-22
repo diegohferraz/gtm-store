@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -6,7 +7,33 @@ import styles from '../../styles/Home.module.css'
 export default function Product() {
   const router = useRouter()
 
+  useEffect(() => {
+    window.dataLayer.push({
+      event: 'c1_product_item_viewed',
+      event_type: 'product_item_viewed',
+      event_value: router.query.id,
+      session_id: '87917321739721312873',
+      item_id: router.query.id,
+      user_id: 'jhonny-cash',
+      placement_id: 'PRODUCT|PAGE',
+      recommendation_id: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6'
+    })
+  }, [])
+
   const handleAddProductToCart = () => {
+    evt.stopPropagation()
+
+    window.dataLayer.push({
+      event: 'c1_added_to_cart',
+      event_type: 'added_to_cart',
+      event_value: router.query.id,
+      session_id: '87917321739721312873',
+      item_id: router.query.id,
+      user_id: 'jhonny-cash',
+      placement_id: 'CART',
+      recommendation_id: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6'
+    })
+
     alert(`Added product ${router.query.id} to cart!`)
   }
 

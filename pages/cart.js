@@ -1,8 +1,22 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Cart() {
+  useEffect(() => {
+    window.dataLayer.push({
+      event: 'c1_initiated_checkout',
+      event_type: 'initiated_checkout',
+      event_value: 150.30,
+      session_id: '87917321739721312873',
+      impressions: '[prod252710633, prod252710633, prod252710633]',
+      user_id: 'jhonny-cash',
+      placement_id: 'HOME|COLLECTION',
+      recommendation_id: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6'
+    })
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
