@@ -6,19 +6,15 @@ export default function Home() {
   const handleAddToWishlist = (evt, prodId) => {
     evt.stopPropagation()
 
-    const evtObj = {
-      eventType: 'added_to_wishlist',
-      eventValue: prodId,
-      sessionID: '87917321739721312873',
-      itemID: prodId,
-      userID: 'jhonny-cash',
-      placementId: 'HOME|COLLECTION',
-      recommendationID: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6',
-    }
-
     window.dataLayer.push({
-      'event': 'c1-addToWishlist',
-      'evtData': JSON.stringify(evtObj)
+      event: 'c1_add_to_wishlist',
+      event_type: 'added_to_wishlist',
+      event_value: prodId,
+      session_id: '87917321739721312873',
+      item_id: prodId,
+      user_id: 'jhonny-cash',
+      placement_id: 'HOME|COLLECTION',
+      recommendation_id: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6'
     })
   }
 
