@@ -21,8 +21,6 @@ export default function Product() {
   }, [])
 
   const handleAddProductToCart = () => {
-    evt.stopPropagation()
-
     window.dataLayer.push({
       event: 'c1_added_to_cart',
       event_type: 'added_to_cart',
