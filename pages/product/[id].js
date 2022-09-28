@@ -29,7 +29,10 @@ export default function Product() {
       item_id: router.query.id,
       user_id: 'jhonny-cash',
       placement_id: 'CART',
-      recommendation_id: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6'
+      recommendation_id: '86c6804d-f85d-46e5-b2c5-07bb289f1dd6',
+      ab_version: "Controller (A)",
+      ab_source: "powerboost",
+      channel: "WEB_DESKTOP"
     })
 
     alert(`Added product ${router.query.id} to cart!`)
